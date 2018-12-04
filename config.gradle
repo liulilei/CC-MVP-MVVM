@@ -27,13 +27,14 @@ ext {
             "cardview-v7"               : "com.android.support:cardview-v7:${dependVersion.support}",
             "recyclerview-v7"           : "com.android.support:recyclerview-v7:${dependVersion.support}",
             "design"                    : "com.android.support:design:${dependVersion.support}",
+            "cc"                        : "com.billy.android:cc:2.1.1",
 
             //ui
             "PhotoView"                 : "com.github.chrisbanes:PhotoView:2.1.3",
             "glide-transformations"     : "jp.wasabeef:glide-transformations:3.1.1",
             "ptr"                       : "in.srain.cube:ultra-ptr:1.0.11",
             "easy-recyclerview"         : "com.jude:easyrecyclerview:4.4.2",
-            "status-bar"                : "com.githang:status-bar-compat:0.7",
+            "statusbarutil"             : "com.jaeger.statusbarutil:library:1.5.1",
             "tablayout"                 : "com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar",
             "bga_banner"                : "cn.bingoogolapple:bga-banner:2.2.4@aar",
             "autosize"                  : "me.jessyan:autosize:1.0.5",
