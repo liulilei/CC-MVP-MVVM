@@ -15,4 +15,8 @@ object Constants {
 
     val GLIDE_CACHE_PATH = "$IMG_PATH/cache"
 
+    val DEFAULT_PAGE_NO = 1
+
+    val DEFAULT_PAGE_SIZE = 15
+
 }
