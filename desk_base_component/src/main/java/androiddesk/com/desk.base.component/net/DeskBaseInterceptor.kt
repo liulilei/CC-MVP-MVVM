@@ -1,5 +1,6 @@
-package com.androiddesk.base.component.net
+package androiddesk.com.desk.base.component.net
 
+import com.androiddesk.base.component.net.BaseInterceptor
 import okhttp3.Interceptor
 import okhttp3.Response
 
@@ -8,9 +9,10 @@ import okhttp3.Response
  * @author: lll
  * @date: 2018/8/7
  */
-open class AutoInterceptor : Interceptor {
+open class DeskBaseInterceptor : BaseInterceptor {
     override fun intercept(chain: Interceptor.Chain?): Response? {
         var request = chain?.request()
+        //添加公共参数
 //        if (request?.url().toString().contains(NetApi.URL)) {
 //            val newBuilder = request?.newBuilder()
 //            newBuilder?.addHeader("language", SpUtils.getString(SpConstants.LANGUAGE_TYPE, Constants.LANGUAGE_DEFAULT))

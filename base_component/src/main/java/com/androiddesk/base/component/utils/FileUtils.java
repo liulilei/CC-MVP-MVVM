@@ -10,6 +10,8 @@ import android.provider.MediaStore;
 import android.text.TextUtils;
 import android.util.Log;
 
+import com.orhanobut.logger.Logger;
+
 import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -111,7 +113,7 @@ public class FileUtils {
             }
             os.flush();
         } catch (IOException e) {
-            LogUtils.Companion.e("FileUtil", "writeToSDCardFile:" + e.getMessage());
+            Logger.e("FileUtil", "writeToSDCardFile:" + e.getMessage());
         } finally {
             try {
                 if (os != null) {

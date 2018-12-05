@@ -26,14 +26,14 @@ object RetrofitHelp {
 
     private var baseUrl: String? = null
 
-    private var autoInterceptor: AutoInterceptor = AutoInterceptor()
+    private var baseInterceptor: BaseInterceptor? = null
 
     fun setBaseUrl(baseUrl: String) {
         this.baseUrl = baseUrl
     }
 
-    fun setInterceptor(autoInterceptor: AutoInterceptor) {
-        this.autoInterceptor = autoInterceptor
+    fun setInterceptor(baseInterceptor: BaseInterceptor) {
+        this.baseInterceptor = baseInterceptor
     }
 
     fun getRetrofit(): Retrofit? {
@@ -59,7 +59,9 @@ object RetrofitHelp {
             okHttpClientBuilder.connectTimeout(DEFAULT_TIME_OUT.toLong(), TimeUnit.SECONDS)
             okHttpClientBuilder.readTimeout(DEFAULT_TIME_OUT.toLong(), TimeUnit.SECONDS)
             okHttpClientBuilder.retryOnConnectionFailure(true)
-            okHttpClientBuilder.interceptors().add(AutoInterceptor())
+            if (baseInterceptor != null) {
+                okHttpClientBuilder.interceptors().add(baseInterceptor)
+            }
 
             if (BuildConfig.DEBUG) {
                 okHttpClientBuilder

@@ -74,10 +74,6 @@ dependencies {
     compile rootProject.ext.dependencies["glide"]
     kapt rootProject.ext.dependencies["glide-compiler"]
 
-    //di
-    compile rootProject.ext.dependencies["dagger"]
-    kapt rootProject.ext.dependencies["dagger-compiler"]
-
     //bugly自动升级
     compile rootProject.ext.dependencies["crashreport"]
     compile rootProject.ext.dependencies["nativecrashreport"]

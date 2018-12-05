@@ -2,6 +2,8 @@ package com.androiddesk.base.component.utils;
 
 import android.text.TextUtils;
 
+import com.orhanobut.logger.Logger;
+
 import java.io.ByteArrayOutputStream;
 import java.io.EOFException;
 import java.io.File;
@@ -237,7 +239,7 @@ public class IOUtils {
             ByteBuffer buffer = getByteBuffer(fis);
             return getString(buffer, encode);
         } catch (Exception e) {
-            LogUtils.Companion.e(TAG, e.toString());
+            Logger.e(TAG, e.toString());
         } finally {
             if (fis != null) {
                 try {

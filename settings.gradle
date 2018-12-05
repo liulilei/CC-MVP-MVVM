@@ -1,1 +1,1 @@
-include ':app', ':base_component'
+include ':app', ':base_component', ':desk_base_component'

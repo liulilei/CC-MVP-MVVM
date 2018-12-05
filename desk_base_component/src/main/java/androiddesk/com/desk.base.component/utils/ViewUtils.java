@@ -1,4 +1,4 @@
-package com.androiddesk.base.component.utils;
+package androiddesk.com.desk.base.component.utils;
 
 import android.content.Context;
 import android.support.v7.widget.LinearLayoutManager;
@@ -8,11 +8,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.androiddesk.base.component.R;
+import com.androiddesk.base.component.utils.DimenUtils;
+import com.androiddesk.base.component.widget.swiperecycler.SwipeRefreshRecyclerView;
 import com.jude.easyrecyclerview.EasyRecyclerView;
 import com.jude.easyrecyclerview.decoration.DividerDecoration;
-
-import io.newdex.exchange.R;
-import io.newdex.exchange.widget.swiperecycler.SwipeRefreshRecyclerView;
 
 public class ViewUtils {
 

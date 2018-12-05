@@ -8,6 +8,8 @@ import android.text.style.AbsoluteSizeSpan;
 import android.text.style.StyleSpan;
 import android.util.Base64;
 
+import com.orhanobut.logger.Logger;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -121,7 +123,7 @@ public final class StringUtils {
         try {
             return Integer.parseInt(input);
         } catch (Exception e) {
-            LogUtils.Companion.e(TAG, e.toString());
+            Logger.e(TAG, e.toString());
         }
         return 0;
     }
@@ -136,7 +138,7 @@ public final class StringUtils {
         try {
             return Long.parseLong(input);
         } catch (Exception e) {
-            LogUtils.Companion.e(TAG, e.toString());
+            Logger.e(TAG, e.toString());
         }
         return 0;
     }

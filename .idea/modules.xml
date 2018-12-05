@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/androiddesk.iml" filepath="$PROJECT_DIR$/androiddesk.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/base_component/base_component.iml" filepath="$PROJECT_DIR$/base_component/base_component.iml" />
+      <module fileurl="file://$PROJECT_DIR$/desk_base_component/desk_base_component.iml" filepath="$PROJECT_DIR$/desk_base_component/desk_base_component.iml" />
     </modules>
   </component>
 </project>
