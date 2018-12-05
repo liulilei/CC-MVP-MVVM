@@ -1,7 +1,7 @@
 package com.androiddesk.base.component.net;
 
 
-import com.androiddesk.base.component.mode.BaseMode;
+import com.androiddesk.base.component.bean.BaseMode;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Type;

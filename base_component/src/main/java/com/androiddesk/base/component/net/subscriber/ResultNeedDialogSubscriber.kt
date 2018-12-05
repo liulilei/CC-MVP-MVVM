@@ -4,7 +4,7 @@ import android.content.Context
 import com.androiddesk.base.component.R
 import com.androiddesk.base.component.dialog.ProgressCancelListener
 import com.androiddesk.base.component.dialog.ProgressDialogHandler
-import com.androiddesk.base.component.mode.BaseMode
+import com.androiddesk.base.component.bean.BaseMode
 import com.androiddesk.base.component.utils.NetUtils
 import com.androiddesk.base.component.utils.ToastUtils
 import io.reactivex.subscribers.ResourceSubscriber

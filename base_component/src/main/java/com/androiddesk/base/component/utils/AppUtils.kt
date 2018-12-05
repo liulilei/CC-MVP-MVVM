@@ -208,6 +208,22 @@ class AppUtils {
             return Looper.myLooper() == Looper.getMainLooper()
         }
 
+        /**
+         * 检测当前是否有安装该应用
+         *
+         * @return true 是
+         */
+        fun isAppInstall1(context: Context, packageName: String): Boolean {
+            return try {
+                context.packageManager.getApplicationInfo(packageName, PackageManager.GET_UNINSTALLED_PACKAGES)
+                true
+            } catch (e: PackageManager.NameNotFoundException) {
+                e.printStackTrace()
+                false
+            }
+
+        }
+
     }
 
 }
