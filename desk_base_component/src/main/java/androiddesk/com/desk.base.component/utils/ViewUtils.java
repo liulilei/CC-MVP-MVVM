@@ -8,11 +8,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.androiddesk.base.component.R;
 import com.androiddesk.base.component.utils.DimenUtils;
 import com.androiddesk.base.component.widget.swiperecycler.SwipeRefreshRecyclerView;
 import com.jude.easyrecyclerview.EasyRecyclerView;
 import com.jude.easyrecyclerview.decoration.DividerDecoration;
+
+import androiddesk.com.desk.base.component.R;
 
 public class ViewUtils {
 

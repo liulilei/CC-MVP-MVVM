@@ -33,6 +33,16 @@ public class ActivityManager {
         activityStack.add(activity);
     }
 
+
+    /**
+     * 移出
+     */
+    public void removeActivity(SupportActivity activity) {
+        if (null != activity) {
+            activityStack.remove(activity);
+        }
+    }
+
     public List<SupportActivity> getActivityStack() {
         return activityStack;
     }
@@ -44,7 +54,7 @@ public class ActivityManager {
     public void finishActivity(Activity activity) {
         if (null != activity) {
             activityStack.remove(activity);
-            activity = null;
+            activity.finish();
         }
     }
 
