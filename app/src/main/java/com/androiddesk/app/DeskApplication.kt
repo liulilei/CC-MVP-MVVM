@@ -1,6 +1,8 @@
 package com.androiddesk.app
 
-import androiddesk.com.desk.base.component.base.BaseApplication
+import androiddesk.com.desk.base.component.app.BaseApplication
+import com.androiddesk.BuildConfig
+import com.billy.cc.core.component.CC
 
 /**
  *@Description:
@@ -9,4 +11,10 @@ import androiddesk.com.desk.base.component.base.BaseApplication
  */
 class DeskApplication : BaseApplication() {
 
+    override fun onCreate() {
+        super.onCreate()
+        CC.enableVerboseLog(BuildConfig.DEBUG)
+        CC.enableDebug(BuildConfig.DEBUG)
+        CC.enableRemoteCC(BuildConfig.DEBUG)
+    }
 }

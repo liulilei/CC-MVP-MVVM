@@ -1,4 +1,4 @@
-package io.newdex.exchange.module.base
+package androiddesk.com.desk.base.component.base
 
 import android.app.Activity
 import android.content.Context
@@ -10,7 +10,7 @@ import me.yokeyword.fragmentation.SupportFragment
 
 /**
  * Created by lll on 2017/2/16.
- * 无mvp fragment基类
+ * mvp fragment基类
  */
 
 abstract class SimpleFragment : SupportFragment() {
@@ -44,13 +44,5 @@ abstract class SimpleFragment : SupportFragment() {
     protected abstract fun initLayout(): Int
 
     open fun initViewAndData() {}
-
-    override fun onResume() {
-        super.onResume()
-    }
-
-    override fun onPause() {
-        super.onPause()
-    }
 
 }

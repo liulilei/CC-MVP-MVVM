@@ -1,4 +1,4 @@
-package io.newdex.exchange.module.base
+package androiddesk.com.desk.base.component.base
 
 import android.app.Activity
 import android.content.pm.ActivityInfo
@@ -12,7 +12,7 @@ import me.yokeyword.fragmentation.anim.FragmentAnimator
 
 /**
  * Created by lll on 2017/2/16.
- * 无mvp activity基类
+ * mvp activity基类
  */
 
 abstract class SimpleActivity : SupportActivity() {

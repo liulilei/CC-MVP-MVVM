@@ -1,11 +1,9 @@
-package io.newdex.exchange.module.base
+package androiddesk.com.desk.base.component.base
 
 import android.app.Activity
 import android.content.pm.ActivityInfo
 import android.os.Bundle
 import androiddesk.com.desk.base.component.R
-import androiddesk.com.desk.base.component.base.BaseView
-import androiddesk.com.desk.base.component.base.RxPresenter
 import androiddesk.com.desk.base.component.module.ActivityModule
 import com.androiddesk.base.component.utils.ActivityManager
 import com.jaeger.library.StatusBarUtil

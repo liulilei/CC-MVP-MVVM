@@ -1,7 +1,5 @@
 package com.androiddesk.base.component.bean
 
-import io.newdex.exchange.module.base.BaseEntity
-
 /**
  *@Description:
  * @author: lll

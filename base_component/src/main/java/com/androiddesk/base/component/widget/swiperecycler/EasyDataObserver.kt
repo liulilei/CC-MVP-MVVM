@@ -1,8 +1,7 @@
-package io.newdex.exchange.widget.swiperecycler
+package com.androiddesk.base.component.widget.swiperecycler
 
 import android.support.v7.widget.RecyclerView
 import com.androiddesk.base.component.constants.Constants
-import com.androiddesk.base.component.widget.swiperecycler.SwipeRefreshRecyclerView
 import com.jude.easyrecyclerview.adapter.RecyclerArrayAdapter
 
 class EasyDataObserver(private val recyclerView: SwipeRefreshRecyclerView) : RecyclerView.AdapterDataObserver() {

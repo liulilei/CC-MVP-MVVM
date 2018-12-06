@@ -1,4 +1,4 @@
-package io.newdex.exchange.module.base
+package androiddesk.com.desk.base.component.base
 
 import android.app.Activity
 import android.content.Context
@@ -6,11 +6,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.umeng.analytics.MobclickAgent
-import io.newdex.exchange.app.BaseApplication
-import io.newdex.exchange.di.component.DaggerFragmentComponent
-import io.newdex.exchange.di.module.FragmentModule
-import io.newdex.exchange.utils.UIUtils
+import androiddesk.com.desk.base.component.module.FragmentModule
+import com.androiddesk.base.component.utils.UIUtils
 import me.yokeyword.fragmentation.SupportFragment
 import javax.inject.Inject
 
@@ -56,17 +53,9 @@ abstract class BaseFragment< T : RxPresenter<*>> : SupportFragment(), BaseView {
         mContext = context
     }
 
-    protected fun getFragmentComponent(): FragmentComponent {
-        return DaggerFragmentComponent.builder()
-                .appComponent(BaseApplication.getAppComponent())
-                .fragmentModule(getFragmentModule())
-                .build()
-    }
-
     protected fun getFragmentModule(): FragmentModule {
         return FragmentModule(this)
     }
-
 
     override fun onDestroy() {
         UIUtils.hideInputKeyboard(mActivity)
@@ -79,15 +68,5 @@ abstract class BaseFragment< T : RxPresenter<*>> : SupportFragment(), BaseView {
     protected abstract fun initInject()
 
     open fun initViewAndData() {}
-
-    override fun onResume() {
-        super.onResume()
-        MobclickAgent.onPageStart(this.javaClass.simpleName) //统计页面，类名为页面名称
-    }
-
-    override fun onPause() {
-        super.onPause()
-        MobclickAgent.onPageEnd(this.javaClass.simpleName)
-    }
 
 }

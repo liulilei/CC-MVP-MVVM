@@ -1,4 +1,4 @@
-package io.newdex.exchange.net.subscriber
+package com.androiddesk.base.component.net.subscriber
 
 import android.content.Context
 import com.androiddesk.base.component.R

@@ -1,6 +1,6 @@
 package androiddesk.com.desk.base.component.module
 
-import androiddesk.com.desk.base.component.base.BaseApplication
+import androiddesk.com.desk.base.component.app.BaseApplication
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton

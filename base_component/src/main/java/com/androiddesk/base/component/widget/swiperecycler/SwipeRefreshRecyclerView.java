@@ -14,8 +14,6 @@ import android.view.ViewGroup;
 import com.androiddesk.base.component.R;
 import com.jude.easyrecyclerview.adapter.RecyclerArrayAdapter;
 
-import io.newdex.exchange.widget.swiperecycler.EasyDataObserver;
-
 /**
  * Created by jiangp on 20/09/2017.
  */

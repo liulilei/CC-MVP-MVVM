@@ -1,10 +1,11 @@
 package com.androiddesk.base.component.utils;
 
 import android.app.Activity;
-import android.support.v4.app.SupportActivity;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import me.yokeyword.fragmentation.SupportActivity;
 
 /**
  * Activity管理类

@@ -1,4 +1,4 @@
-package androiddesk.com.desk.base.component.base
+package androiddesk.com.desk.base.component.app
 
 import android.app.Activity
 import android.app.Application

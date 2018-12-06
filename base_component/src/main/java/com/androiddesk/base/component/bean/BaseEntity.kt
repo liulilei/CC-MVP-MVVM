@@ -1,4 +1,4 @@
-package io.newdex.exchange.module.base
+package com.androiddesk.base.component.bean
 
 import java.io.Serializable
 
