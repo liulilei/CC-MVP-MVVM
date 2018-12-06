@@ -26,7 +26,7 @@ import me.yokeyword.fragmentation.Fragmentation
  * @author: lll
  * @date: 2018/12/5
  */
-class BaseApplication : Application() {
+open class BaseApplication : Application() {
     companion object {
         var APP_VERSION_CODE: Int = 0
 
