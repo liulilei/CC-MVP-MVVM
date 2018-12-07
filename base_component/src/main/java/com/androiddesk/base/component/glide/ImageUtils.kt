@@ -5,7 +5,6 @@ import android.graphics.Bitmap
 import android.graphics.drawable.Drawable
 import android.widget.ImageView
 import com.bumptech.glide.load.engine.DiskCacheStrategy
-import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.target.SimpleTarget
 
@@ -24,14 +23,13 @@ class ImageUtils {
          * @param url
          * @param imageView
          */
-        fun loadAvatarRound(context: Context, rId: Int, url: String, imageView: ImageView) {
+        fun loadAvatarRound(context: Context, rId: Int, url: String?, imageView: ImageView) {
             GlideApp.with(context)
                     .load(url)
                     .fitCenter()
                     .placeholder(rId)
                     .error(rId)
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .transition(DrawableTransitionOptions().crossFade(500))
                     .transform(GlideRoundTransform())
                     .into(imageView)
         }
@@ -45,7 +43,7 @@ class ImageUtils {
          * @param imageView 要设置图片的控件
          * @param rId       配置默认图片的R文件地址
          */
-        fun loadExactlyImg(context: Context, rId: Int, url: String, imageView: ImageView, width: Int, height: Int) {
+        fun loadExactlyImg(context: Context, rId: Int, url: String?, imageView: ImageView, width: Int, height: Int) {
             GlideApp.with(context)
                     .load(url)
                     .override(width, height)//设置加载图片大小
@@ -54,7 +52,6 @@ class ImageUtils {
                     .error(rId)
                     .override(width, height)
                     .diskCacheStrategy(DiskCacheStrategy.NONE)
-                    .transition(DrawableTransitionOptions().crossFade(500))
                     .into(imageView)
         }
 
@@ -66,14 +63,13 @@ class ImageUtils {
          * @param imageView 要设置图片的控件
          * @param rId       配置默认图片的R文件地址
          */
-        fun loadCircleImg(context: Context, rId: Int, url: String, imageView: ImageView) {
+        fun loadCircleImg(context: Context, rId: Int, url: String?, imageView: ImageView) {
             GlideApp.with(context)
                     .load(url)
                     .fitCenter()
                     .placeholder(rId)
                     .error(rId)
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .transition(DrawableTransitionOptions().crossFade(500))
                     .transform(GlideCircleTransform())
                     .into(imageView)
         }
@@ -86,7 +82,7 @@ class ImageUtils {
          * @param imageView 要设置图片的控件
          * @param rId       配置默认图片的R文件地址
          */
-        fun loadCircleImgWithChat(context: Context, rId: Int, url: String, imageView: ImageView) {
+        fun loadCircleImgWithChat(context: Context, rId: Int, url: String?, imageView: ImageView) {
             GlideApp.with(context)
                     .load(url)
                     .fitCenter()
@@ -105,14 +101,13 @@ class ImageUtils {
          * @param imageView 要设置图片的控件
          * @param rId       配置默认图片的R文件地址
          */
-        fun loadRoundImg(context: Context, rId: Int, url: String, imageView: ImageView) {
+        fun loadRoundImg(context: Context, rId: Int, url: String?, imageView: ImageView) {
             GlideApp.with(context)
                     .load(url)
                     .fitCenter()
                     .placeholder(rId)
                     .error(rId)
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .transition(DrawableTransitionOptions().crossFade(500))
                     .transform(GlideRoundTransform())
                     .into(imageView)
         }
@@ -125,14 +120,13 @@ class ImageUtils {
          * @param imageView 要设置图片的控件
          * @param rId       配置默认图片的R文件地址
          */
-        fun loadRoundImgNotDiskCache(context: Context, rId: Int, url: String, imageView: ImageView) {
+        fun loadRoundImgNotDiskCache(context: Context, rId: Int, url: String?, imageView: ImageView) {
             GlideApp.with(context)
                     .load(url)
                     .fitCenter()
                     .placeholder(rId)
                     .error(rId)
                     .diskCacheStrategy(DiskCacheStrategy.NONE)
-                    .transition(DrawableTransitionOptions().crossFade(500))
                     .transform(GlideRoundTransform())
                     .into(imageView)
         }
@@ -145,14 +139,13 @@ class ImageUtils {
          * @param imageView 要设置图片的控件
          * @param rId       配置默认图片的R文件地址
          */
-        fun loadNormalImgNotDiskCache(context: Context, rId: Int, url: String, imageView: ImageView) {
+        fun loadNormalImgNotDiskCache(context: Context, rId: Int, url: String?, imageView: ImageView) {
             GlideApp.with(context)
                     .load(url)
                     .fitCenter()
                     .placeholder(rId)
                     .error(rId)
                     .diskCacheStrategy(DiskCacheStrategy.NONE)
-                    .transition(DrawableTransitionOptions().crossFade(500))
                     .into(imageView)
         }
 
@@ -164,14 +157,13 @@ class ImageUtils {
          * @param imageView 要设置图片的控件
          * @param rId       配置默认图片的R文件地址
          */
-        fun loadNormalImg(context: Context, rId: Int, url: String, imageView: ImageView) {
+        fun loadNormalImg(context: Context, rId: Int, url: String?, imageView: ImageView) {
             GlideApp.with(context)
                     .load(url)
                     .fitCenter()
                     .placeholder(rId)
                     .error(rId)
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .transition(DrawableTransitionOptions().crossFade(500))
                     .into(imageView)
         }
 
@@ -183,7 +175,7 @@ class ImageUtils {
          * @param simpleTarget bitmap返回回调
          * @param rId          配置默认图片的R文件地址
          */
-        fun loadNormalImg(context: Context, rId: Int, url: String, simpleTarget: SimpleTarget<Bitmap>) {
+        fun loadNormalImg(context: Context, rId: Int, url: String?, simpleTarget: SimpleTarget<Bitmap>) {
             GlideApp.with(context)
                     .asBitmap()
                     .load(url)
@@ -195,7 +187,7 @@ class ImageUtils {
         }
 
 
-        fun loadCircleImg(context: Context, rId: Int, url: String, imageview: ImageView, borderWidth: Int, borderColorResId: Int) {
+        fun loadCircleImg(context: Context, rId: Int, url: String?, imageview: ImageView, borderWidth: Int, borderColorResId: Int) {
             GlideApp.with(context)
                     .load(url)
                     .centerCrop()
@@ -213,7 +205,7 @@ class ImageUtils {
          * @param imageView 要设置图片的控件
          * @param rId       配置默认图片的R文件地址
          */
-        fun loadNormalImg(context: Context, rId: Int, url: String, imageView: ImageView, listener: RequestListener<Drawable>) {
+        fun loadNormalImg(context: Context, rId: Int, url: String?, imageView: ImageView, listener: RequestListener<Drawable>) {
             GlideApp.with(context)
                     .load(url)
                     .fitCenter()
@@ -221,7 +213,6 @@ class ImageUtils {
                     .error(rId)
                     .listener(listener)
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .transition(DrawableTransitionOptions().crossFade(500))
                     .into(imageView)
         }
 
@@ -232,12 +223,11 @@ class ImageUtils {
          * @param url       图片的url地址
          * @param imageView 要设置图片的控件
          */
-        fun loadNormalImgNoDefault(context: Context, url: String, imageView: ImageView) {
+        fun loadNormalImgNoDefault(context: Context, url: String?, imageView: ImageView) {
             GlideApp.with(context)
                     .load(url)
                     .fitCenter()
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .transition(DrawableTransitionOptions().crossFade(500))
                     .into(imageView)
         }
     }

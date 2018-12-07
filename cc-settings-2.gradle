@@ -17,5 +17,5 @@ project.dependencies.add(dependencyMode, "com.billy.android:cc:2.1.1")
 //      3. 开启app内部多进程支持
 //      4. 其它公共配置信息
 dependencies {
-    implementation project(':desk_base_component')
+    api project(':desk_base_component')
 }
