@@ -1,6 +1,7 @@
 package com.androiddesk
 
 import android.content.Intent
+import android.content.pm.ActivityInfo
 import androiddesk.com.desk.base.component.base.SimpleActivity
 
 /**
@@ -29,6 +30,13 @@ class HomeActivity : SimpleActivity() {
     override fun onNewIntent(intent: Intent?) {
         super.onNewIntent(intent)
         mIsForeground = true
+    }
+
+    override fun initStartAnimation() {
+        requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT//竖屏锁定
+    }
+
+    override fun initEndAnimation() {
     }
 
     override fun onDestroy() {

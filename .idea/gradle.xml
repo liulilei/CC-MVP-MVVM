@@ -12,6 +12,8 @@
             <option value="$PROJECT_DIR$/base_component" />
             <option value="$PROJECT_DIR$/desk_base_component" />
             <option value="$PROJECT_DIR$/desk_category_component" />
+            <option value="$PROJECT_DIR$/desk_my_component" />
+            <option value="$PROJECT_DIR$/desk_newest_component" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

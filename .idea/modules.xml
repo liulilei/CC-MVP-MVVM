@@ -7,6 +7,8 @@
       <module fileurl="file://$PROJECT_DIR$/base_component/base_component.iml" filepath="$PROJECT_DIR$/base_component/base_component.iml" />
       <module fileurl="file://$PROJECT_DIR$/desk_base_component/desk_base_component.iml" filepath="$PROJECT_DIR$/desk_base_component/desk_base_component.iml" />
       <module fileurl="file://$PROJECT_DIR$/desk_category_component/desk_category_component.iml" filepath="$PROJECT_DIR$/desk_category_component/desk_category_component.iml" />
+      <module fileurl="file://$PROJECT_DIR$/desk_my_component/desk_my_component.iml" filepath="$PROJECT_DIR$/desk_my_component/desk_my_component.iml" />
+      <module fileurl="file://$PROJECT_DIR$/desk_newest_component/desk_newest_component.iml" filepath="$PROJECT_DIR$/desk_newest_component/desk_newest_component.iml" />
     </modules>
   </component>
 </project>

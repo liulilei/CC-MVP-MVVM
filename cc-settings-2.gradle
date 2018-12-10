@@ -19,3 +19,28 @@ project.dependencies.add(dependencyMode, "com.billy.android:cc:2.1.1")
 dependencies {
     api project(':desk_base_component')
 }
+
+ccregister.registerInfo.add([
+        'scanInterface'         : 'androiddesk.com.desk.base.component.processor.IActionProcessor',
+        //在自动注册组件的基础上增加：自动注册组件category的processor
+        'codeInsertToClassName' : 'com.androiddesk.desk.category.component.ComponentCategory',
+        'codeInsertToMethodName': 'initProcessors',
+        'registerMethodName'    : 'add',
+])
+ccregister.registerInfo.add([
+        'scanInterface'         : 'androiddesk.com.desk.base.component.processor.IActionProcessor',
+        //在自动注册组件的基础上增加：自动注册组件newest的processor
+        'codeInsertToClassName' : 'com.androiddesk.desk.newest.component.ComponentNewest',
+        'codeInsertToMethodName': 'initProcessors',
+        'registerMethodName'    : 'add'
+])
+ccregister.registerInfo.add([
+        'scanInterface'         : 'androiddesk.com.desk.base.component.processor.IActionProcessor',
+        //在自动注册组件的基础上增加：自动注册组件my的processor
+        'codeInsertToClassName' : 'com.androiddesk.desk.my.component.ComponentMy',
+        'codeInsertToMethodName': 'initProcessors',
+        'registerMethodName'    : 'add'
+])
+
+//开启app内部多进程组件调用
+ccregister.multiProcessEnabled = true

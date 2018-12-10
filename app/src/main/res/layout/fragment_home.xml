@@ -18,7 +18,7 @@
         android:background="@color/white"
         tl:tl_iconGravity="TOP"
         tl:tl_iconMargin="@dimen/dp_3"
-        tl:tl_textSelectColor="@color/color_4A90E2"
+        tl:tl_textSelectColor="@color/color_DE462A"
         tl:tl_textUnselectColor="@color/color_9B9B9B"
         tl:tl_textsize="@dimen/sp_8"
         tl:tl_underline_color="#1A000000"
