@@ -1,4 +1,4 @@
-package com.androiddesk.desk.category.component.processor
+package com.androiddesk.desk.newest.component.processor
 
 import androiddesk.com.desk.base.component.processor.ComponentNewest
 import androiddesk.com.desk.base.component.processor.IActionProcessor

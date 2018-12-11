@@ -7,5 +7,5 @@ package androiddesk.com.desk.base.component.net
  */
 object NetApi {
     //切换测试环境与正式环境
-    const val URL = "https://www.baidu.com" //正式环境
+    const val URL = "http://service.picasso.adesk.com/v1/" //正式环境
 }

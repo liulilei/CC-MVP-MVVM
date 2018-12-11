@@ -40,7 +40,7 @@ abstract class BaseActivity<T : RxPresenter<*>> : SupportActivity(), BaseView {
         initViewAndData()
     }
 
-    private fun getActivityModule(): ActivityModule {
+    protected fun getActivityModule(): ActivityModule {
         return ActivityModule(this)
     }
 

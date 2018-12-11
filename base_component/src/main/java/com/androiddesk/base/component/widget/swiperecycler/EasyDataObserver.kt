@@ -6,7 +6,7 @@ import com.jude.easyrecyclerview.adapter.RecyclerArrayAdapter
 
 class EasyDataObserver(private val recyclerView: SwipeRefreshRecyclerView) : RecyclerView.AdapterDataObserver() {
     private var adapter: RecyclerArrayAdapter<*>? = null
-    private val DEFAULT_EACH_PAGE_ITEM_COUNT = 10//默认每页加载条数为10
+    private val DEFAULT_EACH_PAGE_ITEM_COUNT = Constants.DEFAULT_PAGE_SIZE//默认每页加载条数为10
     private var mEachPageItemCount = Constants.DEFAULT_PAGE_SIZE
 
     init {
