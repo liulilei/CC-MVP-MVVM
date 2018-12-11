@@ -42,7 +42,7 @@ class HomeFragment : SimpleFragment() {
     init {
         val mIconUnSelectIds = intArrayOf(R.mipmap.nav_home_normal, R.mipmap.nav_landscape_normal, R.mipmap.nav_person_normal)
         val mIconSelectIds = intArrayOf(R.mipmap.nav_home_selected, R.mipmap.nav_landscape_selected, R.mipmap.nav_person_selected)
-        val titles = arrayOf("分类", "最新", "我的")
+        val titles = arrayOf("分类1", "最新", "我的")
         for (i in titles.indices) {
             mTabEntities.add(TabEntity(titles[i], mIconSelectIds[i], mIconUnSelectIds[i]))
         }
