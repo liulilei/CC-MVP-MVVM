@@ -54,12 +54,14 @@ class NewestFragment : BaseMvpFragment<NewestPresenter>(), NewestContract.View, 
         itemDecoration.setPaddingStart(true)//是否在给第一行的item添加上padding(不包含header).默认true.
         itemDecoration.setPaddingHeaderFooter(false)//是否对Header于Footer有效,默认false.
         recyclerView.addItemDecoration(itemDecoration)
-        adapter = object : RecyclerArrayAdapter<VerticalInfo.Vertical>(this!!.context) {
-            override fun OnCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder<*> {
-                return NewestViewHolder(parent)
+        recyclerView.adapter = adapter.let {
+            adapter = object : RecyclerArrayAdapter<VerticalInfo.Vertical>(context) {
+                override fun OnCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder<*> {
+                    return NewestViewHolder(parent)
+                }
             }
+            return@let adapter
         }
-        recyclerView.adapter = adapter
         recyclerView.setRefreshListener { onRefresh() }
         ViewUtils.setEmptyView(recyclerView, "暂无记录")
         adapter?.setMore(R.layout.footer_loading_more, this)
