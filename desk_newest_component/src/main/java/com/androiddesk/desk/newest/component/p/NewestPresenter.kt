@@ -23,7 +23,7 @@ constructor(var context: Context?) : RxPresenter<NewestContract.View>(), NewestC
     override fun getVerticalList(pageNo: Int, hasDialog: Boolean) {
         ApiManager.getNewApi()?.getVerticalNew(ParamsUtils.getVerticalList(pageNo * Constants.DEFAULT_PAGE_SIZE, Constants.DEFAULT_PAGE_SIZE))!!
                 .compose(RxUtils.rxSchedulerHelper())
-                .subscribe(ResultDialogSubscriber<VerticalInfo>(context!!, object : SubscriberListener<VerticalInfo> {
+                .subscribe(ResultDialogSubscriber<VerticalInfo>(context!!, hasDialog, object : SubscriberListener<VerticalInfo> {
                     override fun onNext(t: VerticalInfo) {
                         mView?.showList(t.res?.vertical, pageNo)
                     }
