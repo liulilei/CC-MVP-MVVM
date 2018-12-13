@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">desk_newest_component</string>
+    <string name="newest_url">http://service.picasso.adesk.com/v1/vertical%1$s/vertical</string>
 </resources>

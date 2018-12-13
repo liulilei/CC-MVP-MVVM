@@ -48,7 +48,8 @@ class NewestFragment : BaseMvpFragment<NewestPresenter>(), NewestContract.View, 
 
     override fun initViewAndData() {
         titleTv.text = "最新"
-        recyclerView.setLayoutManager(GridLayoutManager(context, 3))
+        val gridLayoutManager = GridLayoutManager(context, 3)
+        recyclerView.setLayoutManager(gridLayoutManager)
         val itemDecoration = SpaceDecoration(StringUtils.dip2px(context, 3f))//参数是距离宽度
         itemDecoration.setPaddingEdgeSide(true)//是否为左右2边添加padding.默认true.
         itemDecoration.setPaddingStart(true)//是否在给第一行的item添加上padding(不包含header).默认true.
@@ -62,6 +63,7 @@ class NewestFragment : BaseMvpFragment<NewestPresenter>(), NewestContract.View, 
             }
             return@let adapter
         }
+        gridLayoutManager.spanSizeLookup = adapter?.obtainGridSpanSizeLookUp(3)
         recyclerView.setRefreshListener { onRefresh() }
         ViewUtils.setEmptyView(recyclerView, "暂无记录")
         adapter?.setMore(R.layout.footer_loading_more, this)

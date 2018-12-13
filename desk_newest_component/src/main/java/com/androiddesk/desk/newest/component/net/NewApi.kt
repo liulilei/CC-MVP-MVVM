@@ -4,6 +4,7 @@ import com.androiddesk.desk.newest.component.m.VerticalInfo
 import io.reactivex.Flowable
 import retrofit2.http.GET
 import retrofit2.http.QueryMap
+import retrofit2.http.Url
 
 /**
  *@Description:
@@ -12,6 +13,6 @@ import retrofit2.http.QueryMap
  */
 interface NewApi {
 
-    @GET(NetApi.NEW_URL)
-    fun getVerticalNew(@QueryMap params: Map<String, String>): Flowable<VerticalInfo>
+    @GET
+    fun getVerticalNew(@Url url: String, @QueryMap params: Map<String, String>): Flowable<VerticalInfo>
 }

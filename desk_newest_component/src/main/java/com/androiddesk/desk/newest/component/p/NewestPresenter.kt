@@ -6,6 +6,7 @@ import com.androiddesk.base.component.constants.Constants
 import com.androiddesk.base.component.net.subscriber.ResultDialogSubscriber
 import com.androiddesk.base.component.net.subscriber.SubscriberListener
 import com.androiddesk.base.component.utils.RxUtils
+import com.androiddesk.desk.newest.component.R
 import com.androiddesk.desk.newest.component.m.VerticalInfo
 import com.androiddesk.desk.newest.component.net.ApiManager
 import com.androiddesk.desk.newest.component.net.ParamsUtils
@@ -21,7 +22,7 @@ class NewestPresenter @Inject
 constructor(var context: Context?) : RxPresenter<NewestContract.View>(), NewestContract.Presenter {
 
     override fun getVerticalList(pageNo: Int, hasDialog: Boolean) {
-        ApiManager.getNewApi()?.getVerticalNew(ParamsUtils.getVerticalList(pageNo * Constants.DEFAULT_PAGE_SIZE, Constants.DEFAULT_PAGE_SIZE))!!
+        ApiManager.getNewApi()?.getVerticalNew(String.format(context?.getString(R.string.newest_url)!!, ""), ParamsUtils.getVerticalList(pageNo * Constants.DEFAULT_PAGE_SIZE, Constants.DEFAULT_PAGE_SIZE))!!
                 .compose(RxUtils.rxSchedulerHelper())
                 .subscribe(ResultDialogSubscriber<VerticalInfo>(context!!, hasDialog, object : SubscriberListener<VerticalInfo> {
                     override fun onNext(t: VerticalInfo) {

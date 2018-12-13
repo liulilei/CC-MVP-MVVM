@@ -7,6 +7,6 @@ package com.androiddesk.desk.category.component.net
  */
 object NetApi {
 
-    const val NEW_URL = "vertical/vertical" //最新
+    const val CATEGORY_URL = "vertical/category?adult=false&first=1" //手机壁纸类别
 
 }

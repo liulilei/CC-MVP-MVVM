@@ -13,7 +13,7 @@ class ApiManager {
 
         private var newApi: CategoryApi? = null
 
-        fun getNewApi(): CategoryApi? {
+        fun getCategoryApi(): CategoryApi? {
             if (newApi == null) {
                 synchronized(CategoryApi::class.java) {
                     if (newApi == null) {

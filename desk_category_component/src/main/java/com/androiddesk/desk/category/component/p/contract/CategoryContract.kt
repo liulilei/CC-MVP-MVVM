@@ -2,6 +2,7 @@ package com.androiddesk.desk.category.component.p.contract
 
 import androiddesk.com.desk.base.component.base.BasePresenter
 import androiddesk.com.desk.base.component.base.BaseView
+import com.androiddesk.desk.category.component.m.CategoryInfo
 
 /**
  *@Description:
@@ -11,8 +12,10 @@ import androiddesk.com.desk.base.component.base.BaseView
 interface CategoryContract {
 
     interface View : BaseView {
+        fun showList(vertical: List<CategoryInfo.Category>?)
     }
 
     interface Presenter : BasePresenter<View> {
+        fun getCategoryList()
     }
 }
