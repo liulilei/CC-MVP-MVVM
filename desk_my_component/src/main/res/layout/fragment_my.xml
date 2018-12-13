@@ -4,11 +4,13 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <TextView
+    <include layout="@layout/base_title" />
+
+    <FrameLayout
+        android:id="@+id/fl_container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="我的"
-        android:textSize="@dimen/sp_30" />
+        android:layout_height="match_parent">
+
+    </FrameLayout>
 
 </LinearLayout>
