@@ -21,8 +21,16 @@ import javax.inject.Inject
 class NewestPresenter @Inject
 constructor(var context: Context?) : RxPresenter<NewestContract.View>(), NewestContract.Presenter {
 
-    override fun getVerticalList(pageNo: Int, hasDialog: Boolean) {
-        ApiManager.getNewApi()?.getVerticalNew(String.format(context?.getString(R.string.newest_url)!!, ""), ParamsUtils.getVerticalList(pageNo * Constants.DEFAULT_PAGE_SIZE, Constants.DEFAULT_PAGE_SIZE))!!
+    override fun getVerticalList(id: String, pageNo: Int, hasDialog: Boolean) {
+        var order: String
+        var format = if (id.isNotEmpty()) {
+            order = "hot"
+            "/category/$id"
+        } else {
+            order = "new"
+            ""
+        }
+        ApiManager.getNewApi()?.getVerticalNew(String.format(context?.getString(R.string.newest_url)!!, format), ParamsUtils.getVerticalList(pageNo * Constants.DEFAULT_PAGE_SIZE, Constants.DEFAULT_PAGE_SIZE, order))!!
                 .compose(RxUtils.rxSchedulerHelper())
                 .subscribe(ResultDialogSubscriber<VerticalInfo>(context!!, hasDialog, object : SubscriberListener<VerticalInfo> {
                     override fun onNext(t: VerticalInfo) {

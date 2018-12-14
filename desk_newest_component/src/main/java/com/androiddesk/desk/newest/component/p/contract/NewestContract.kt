@@ -18,6 +18,6 @@ interface NewestContract {
     }
 
     interface Presenter : BasePresenter<View> {
-        fun getVerticalList(pageNo: Int, hasDialog: Boolean)
+        fun getVerticalList(id: String, pageNo: Int, hasDialog: Boolean)
     }
 }

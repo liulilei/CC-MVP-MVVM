@@ -30,6 +30,7 @@ abstract class SimpleActivity : SupportActivity() {
         }
         ActivityManager.getAppManager().addActivity(this)
         initViewAndData()
+        StatusBarUtil.setLightMode(this)
     }
 
     override fun onCreateFragmentAnimator(): FragmentAnimator {

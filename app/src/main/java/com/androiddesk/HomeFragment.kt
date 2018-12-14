@@ -13,7 +13,6 @@ import com.androiddesk.base.component.utils.ToastUtils
 import com.billy.cc.core.component.CC
 import com.flyco.tablayout.listener.CustomTabEntity
 import com.flyco.tablayout.listener.OnTabSelectListener
-import com.jaeger.library.StatusBarUtil
 import com.tbruyelle.rxpermissions2.RxPermissions
 import io.reactivex.disposables.Disposable
 import kotlinx.android.synthetic.main.fragment_home.*
@@ -105,7 +104,6 @@ class HomeFragment : SimpleFragment() {
     }
 
     override fun initViewAndData() {
-        StatusBarUtil.setLightMode(_mActivity)
         initPermission()
         fragmentHomeTl.setTabData(mTabEntities)
         fragmentHomeTl.setOnTabSelectListener(object : OnTabSelectListener {

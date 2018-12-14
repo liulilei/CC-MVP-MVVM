@@ -29,9 +29,18 @@ class NewestFragment : BaseMvpFragment<NewestPresenter>(), NewestContract.View, 
 
     private var adapter: RecyclerArrayAdapter<VerticalInfo.Vertical>? = null
 
+    private var id = ""
+
     companion object {
-        fun newInstance(): NewestFragment {
+
+        private const val TITLE = "title"
+
+        private const val ID = "id"
+
+        fun newInstance(title: String, id: String): NewestFragment {
             val args = Bundle()
+            args.putString(TITLE, title)
+            args.putString(ID, id)
             val fragment = NewestFragment()
             fragment.arguments = args
             return fragment
@@ -47,7 +56,8 @@ class NewestFragment : BaseMvpFragment<NewestPresenter>(), NewestContract.View, 
     }
 
     override fun initViewAndData() {
-        titleTv.text = "最新"
+        titleTv.text = arguments?.getString(TITLE, "")
+        id = arguments?.getString(ID, "")!!
         val gridLayoutManager = GridLayoutManager(context, 3)
         recyclerView.setLayoutManager(gridLayoutManager)
         val itemDecoration = SpaceDecoration(StringUtils.dip2px(context, 3f))//参数是距离宽度
@@ -73,12 +83,12 @@ class NewestFragment : BaseMvpFragment<NewestPresenter>(), NewestContract.View, 
 
     override fun onLazyInitView(savedInstanceState: Bundle?) {
         super.onLazyInitView(savedInstanceState)
-        mPresenter?.getVerticalList(pageNo, true)
+        mPresenter?.getVerticalList(id, pageNo, true)
     }
 
     private fun onRefresh() {
         val pageNo = Constants.DEFAULT_PAGE_NO
-        mPresenter?.getVerticalList(pageNo, false)
+        mPresenter?.getVerticalList(id, pageNo, false)
     }
 
     override fun onErrorShow() {
@@ -90,7 +100,7 @@ class NewestFragment : BaseMvpFragment<NewestPresenter>(), NewestContract.View, 
 
     override fun onLoadMore() {
         val pageNo = this.pageNo + 1
-        mPresenter?.getVerticalList(pageNo, false)
+        mPresenter?.getVerticalList(id, pageNo, false)
     }
 
     override fun showList(vertical: List<VerticalInfo.Vertical>?, pageNo: Int) {

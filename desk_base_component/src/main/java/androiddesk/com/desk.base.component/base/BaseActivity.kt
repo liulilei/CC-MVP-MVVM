@@ -38,6 +38,7 @@ abstract class BaseActivity<T : RxPresenter<*>> : SupportActivity(), BaseView {
         }
         ActivityManager.getAppManager().addActivity(this)
         initViewAndData()
+        StatusBarUtil.setLightMode(this)
     }
 
     protected fun getActivityModule(): ActivityModule {

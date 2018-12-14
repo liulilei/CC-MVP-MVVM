@@ -145,4 +145,20 @@ public class ToActivityUtils {
         context.startActivity(intent);
     }
 
+    /**
+     * 为activity跳转创建一个intent，如果调用方没设置context
+     * 使用application来startActivity时自动添加{@link Intent#FLAG_ACTIVITY_NEW_TASK}
+     * @param context Context对象
+     * @param activityClass 要跳转的activity
+     * @return intent
+     */
+    public static Intent createNavigateIntent(Context context, Class<? extends Activity> activityClass) {
+        Intent intent = new Intent(context, activityClass);
+        if (!(context instanceof Activity)) {
+            //调用方没有设置context或app间组件跳转，context为application
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        }
+        return intent;
+    }
+
 }

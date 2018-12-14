@@ -3,12 +3,14 @@ package com.androiddesk.desk.category.component.v
 import android.os.Bundle
 import android.support.v7.widget.GridLayoutManager
 import android.view.ViewGroup
+import androiddesk.com.desk.base.component.processor.ComponentNewest
 import com.androiddesk.base.component.utils.StringUtils
 import com.androiddesk.desk.category.component.R
 import com.androiddesk.desk.category.component.adapter.viewholder.CategorytViewHolder
 import com.androiddesk.desk.category.component.m.CategoryInfo
 import com.androiddesk.desk.category.component.p.CategoryPresenter
 import com.androiddesk.desk.category.component.p.contract.CategoryContract
+import com.billy.cc.core.component.CC
 import com.jude.easyrecyclerview.adapter.BaseViewHolder
 import com.jude.easyrecyclerview.adapter.RecyclerArrayAdapter
 import com.jude.easyrecyclerview.decoration.SpaceDecoration
@@ -60,6 +62,18 @@ class CategoryFragment : BaseMvpFragment<CategoryPresenter>(), CategoryContract.
         }
         gridLayoutManager.spanSizeLookup = adapter?.obtainGridSpanSizeLookUp(3)
         mPresenter?.getCategoryList()
+        adapter?.setOnItemClickListener {
+            if (it >= 0) {
+                val item = adapter?.getItem(it)
+                CC.obtainBuilder(ComponentNewest.COMPONENT_NAME)
+                        .setActionName(ComponentNewest.NEWEST_ACTIVITY_ACTION)
+                        .setContext(mContext)
+                        .addParam(ComponentNewest.NEWEST_ACTIVITY_TITLE, item?.name)
+                        .addParam(ComponentNewest.NEWEST_ACTIVITY_ID, item?.id)
+                        .build()
+                        .call()
+            }
+        }
     }
 
     override fun showList(vertical: List<CategoryInfo.Category>?) {

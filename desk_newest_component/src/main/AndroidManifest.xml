@@ -4,6 +4,7 @@
 
     <application>
         <activity android:name=".MainActivity" />
+        <activity android:name=".v.NewestActivity" />
     </application>
 
 </manifest>

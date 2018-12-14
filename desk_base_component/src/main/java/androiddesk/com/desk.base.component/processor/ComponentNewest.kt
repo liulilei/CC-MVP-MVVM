@@ -13,4 +13,10 @@ object ComponentNewest {
 
     const val NEWEST_FRAGMENT_DATA = "newestFragmentData"
 
+    const val NEWEST_ACTIVITY_ACTION = "newestActivity"
+
+    const val NEWEST_ACTIVITY_TITLE = "newestActivityTitle"
+
+    const val NEWEST_ACTIVITY_ID = "newestActivityId"
+
 }
