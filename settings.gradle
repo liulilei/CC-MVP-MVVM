@@ -1,1 +1,1 @@
-include ':app', ':base_component', ':desk_base_component', ':desk_category_component', ':desk_newest_component', ':desk_my_component'
+include ':app', ':base_component', ':desk_base_component', ':desk_category_component', ':desk_newest_component', ':desk_my_component', ':desk_detail_component'
