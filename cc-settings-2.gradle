@@ -41,6 +41,13 @@ ccregister.registerInfo.add([
         'codeInsertToMethodName': 'initProcessors',
         'registerMethodName'    : 'add'
 ])
+ccregister.registerInfo.add([
+        'scanInterface'         : 'androiddesk.com.desk.base.component.processor.IActionProcessor',
+        //在自动注册组件的基础上增加：自动注册组件detail的processor
+        'codeInsertToClassName' : 'com.androiddesk.desk.detail.component.ComponentDetail',
+        'codeInsertToMethodName': 'initProcessors',
+        'registerMethodName'    : 'add'
+])
 
 //开启app内部多进程组件调用
 ccregister.multiProcessEnabled = true

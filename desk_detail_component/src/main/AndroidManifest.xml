@@ -4,7 +4,7 @@
 
     <application>
         <activity android:name=".MainActivity" />
-        <activity android:name=".DeskDetailActivity" />
+        <activity android:name=".v.DeskDetailActivity" />
     </application>
 
 </manifest>

@@ -1,6 +1,7 @@
-package com.androiddesk.desk.detail.component
+package com.androiddesk.desk.detail.component.v
 
 import androiddesk.com.desk.base.component.base.SimpleActivity
+import com.androiddesk.desk.detail.component.R
 
 /**
  *@Description:

@@ -48,6 +48,7 @@ dependencies {
     addComponent 'desk_category_component'
     addComponent 'desk_newest_component'
     addComponent 'desk_my_component'
+    addComponent 'desk_detail_component'
 
 }
 
