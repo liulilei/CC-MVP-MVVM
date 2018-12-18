@@ -8,4 +8,6 @@ package androiddesk.com.desk.base.component.processor
 object ComponentDetail {
 
     const val COMPONENT_NAME = "componentDetail"
+
+    const val DETAIL_ACTIVITY_ACTION = "detailActivityAction"
 }

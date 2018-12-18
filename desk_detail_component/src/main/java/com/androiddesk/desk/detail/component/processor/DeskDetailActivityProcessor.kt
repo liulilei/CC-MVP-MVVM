@@ -1,5 +1,6 @@
 package com.androiddesk.desk.detail.component.processor
 
+import androiddesk.com.desk.base.component.processor.ComponentDetail
 import androiddesk.com.desk.base.component.processor.IActionProcessor
 import com.billy.cc.core.component.CC
 
@@ -10,7 +11,7 @@ import com.billy.cc.core.component.CC
  */
 class DeskDetailActivityProcessor : IActionProcessor {
     override fun getActionName(): String {
-        return ""
+        return ComponentDetail.DETAIL_ACTIVITY_ACTION
     }
 
     override fun onActionCall(cc: CC): Boolean {
