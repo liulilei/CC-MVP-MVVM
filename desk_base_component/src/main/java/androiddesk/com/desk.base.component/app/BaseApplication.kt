@@ -17,6 +17,7 @@ import com.orhanobut.logger.AndroidLogAdapter
 import com.orhanobut.logger.DiskLogAdapter
 import com.orhanobut.logger.Logger
 import com.orhanobut.logger.PrettyFormatStrategy
+import me.jessyan.autosize.AutoSize
 import me.jessyan.autosize.AutoSizeConfig
 import me.jessyan.autosize.onAdaptListener
 import me.yokeyword.fragmentation.Fragmentation
@@ -71,6 +72,7 @@ open class BaseApplication : Application() {
         RetrofitHelp.setBaseUrl(NetApi.URL)
         RetrofitHelp.setInterceptor(DeskBaseInterceptor())
 
+        AutoSize.initCompatMultiProcess(this)
         AutoSizeConfig.getInstance()
 
                 //是否让框架支持自定义 Fragment 的适配参数, 由于这个需求是比较少见的, 所以须要使用者手动开启
@@ -95,7 +97,7 @@ open class BaseApplication : Application() {
         }
 
         //把log存到本地
-        Logger.addLogAdapter(DiskLogAdapter(TxtFormatStrategy.newBuilder().tag(getString(R.string.app_name)).build(packageName, getString(R.string.app_name))));
+        Logger.addLogAdapter(DiskLogAdapter(TxtFormatStrategy.newBuilder().tag(getString(R.string.app_name)).build(packageName, getString(R.string.app_name))))
 
 
     }

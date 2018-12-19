@@ -91,7 +91,7 @@ class WebViewFragment : SupportFragment() {
     override fun onDestroy() {
         super.onDestroy()
         mRootView?.removeView(webView)
-        webView.destroy()
+        webView?.destroy()
     }
 
     fun webViewGoBack(): Boolean {
