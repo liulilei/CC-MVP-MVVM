@@ -8,7 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:text="详情"
+        android:text="详情zzz"
         android:textSize="@dimen/sp_30" />
 
 </LinearLayout>
