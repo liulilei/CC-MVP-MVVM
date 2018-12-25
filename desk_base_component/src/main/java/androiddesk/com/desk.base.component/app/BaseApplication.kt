@@ -74,7 +74,7 @@ open class BaseApplication : Application() {
 
         AutoSize.initCompatMultiProcess(this)
         AutoSizeConfig.getInstance()
-
+                .setExcludeFontScale(true)
                 //是否让框架支持自定义 Fragment 的适配参数, 由于这个需求是比较少见的, 所以须要使用者手动开启
                 //如果没有这个需求建议不开启
                 .setCustomFragment(true).onAdaptListener = object : onAdaptListener {
