@@ -1,5 +1,6 @@
 package com.androiddesk.desk.newest.component.m
 
+import com.androiddesk.base.component.bean.BaseEntity
 import com.androiddesk.base.component.bean.BaseMode
 
 /**
@@ -27,6 +28,18 @@ class VerticalInfo : BaseMode<VerticalInfo.VerticalList>() {
             var url: List<String>,
             var rule: String,
             var preview: String,
-            var store: String
-    )
+            var store: String,
+            var user: User
+    ) : BaseEntity
+
+    data class User(
+            val name: String,
+            val viptime: Double,
+            val auth: String,
+            val follower: Int,
+            val avatar: String,
+            val isvip: Boolean,
+            val id: String
+    ) : BaseEntity
+
 }
