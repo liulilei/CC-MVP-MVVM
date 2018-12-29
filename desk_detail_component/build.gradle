@@ -43,6 +43,8 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
     kapt rootProject.ext.dependencies["dagger-compiler"]
+    compile 'android.arch.lifecycle:extensions:1.1.1'
+    kapt "android.arch.lifecycle:compiler:1.1.1"
 }
 
 repositories {

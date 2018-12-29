@@ -3,7 +3,7 @@ package com.androiddesk.desk.detail.component.mvvm.base
 import android.arch.lifecycle.AndroidViewModel
 import android.support.annotation.NonNull
 import androiddesk.com.desk.base.component.app.BaseApplication
-import com.androiddesk.desk.detail.component.mvvm.util.GenericSuperUtils
+import javax.inject.Inject
 
 /**
  *@Description:
@@ -12,11 +12,9 @@ import com.androiddesk.desk.detail.component.mvvm.util.GenericSuperUtils
  */
 class BaseViewModel<T : BaseRepository>(@NonNull application: BaseApplication) : AndroidViewModel(application) {
 
+    @Inject
+    @JvmField
     var mRepository: T? = null
-
-    init {
-        mRepository = GenericSuperUtils.getNewInstance(this, 0)
-    }
 
     override fun onCleared() {
         super.onCleared()
