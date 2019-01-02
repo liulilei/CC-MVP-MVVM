@@ -42,7 +42,6 @@ abstract class BaseActivity<T : BaseViewModel<*>> : SupportActivity() {
 
     private fun <T : ViewModel> vMProviders(activity: AppCompatActivity, modelClass: Class<T>?): T {
         return ViewModelProviders.of(activity).get<T>(modelClass!!)
-
     }
 
     override fun onCreateFragmentAnimator(): FragmentAnimator {

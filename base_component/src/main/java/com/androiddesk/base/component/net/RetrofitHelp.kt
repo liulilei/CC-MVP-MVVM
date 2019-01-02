@@ -3,7 +3,7 @@ package com.androiddesk.base.component.net
 import com.androiddesk.base.component.BuildConfig
 import com.androiddesk.base.component.net.cookie.CookieJarImpl
 import com.androiddesk.base.component.net.cookie.store.MemoryCookieStore
-import com.orhanobut.logger.Logger
+import com.androiddesk.base.component.utils.logger.LogHelper
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -65,7 +65,7 @@ object RetrofitHelp {
 
             if (BuildConfig.DEBUG) {
                 okHttpClientBuilder
-                        .addInterceptor(HttpLoggingInterceptor(HttpLoggingInterceptor.Logger { message -> Logger.e("url:", "" + message) }).setLevel(HttpLoggingInterceptor.Level.BODY))
+                        .addInterceptor(HttpLoggingInterceptor(HttpLoggingInterceptor.Logger { message -> LogHelper.e(message) }).setLevel(HttpLoggingInterceptor.Level.BODY))
             }
 
             client = okHttpClientBuilder.build()
