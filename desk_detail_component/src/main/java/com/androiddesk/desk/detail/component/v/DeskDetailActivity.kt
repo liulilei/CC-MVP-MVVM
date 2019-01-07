@@ -19,7 +19,7 @@ class DeskDetailActivity : BaseActivity<DeskDetailViewMolder>() {
     override fun initViewAndData() {
         tv.setOnClickListener {
             //            startActivity(Intent(this, AutoSizeDemo::class.java))
-            mViewModel?.getVerticalList("", 1)
+            mViewModel?.getVerticalList(mContext, "", 1, true)
         }
     }
 }

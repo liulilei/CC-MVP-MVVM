@@ -16,9 +16,9 @@ import com.androiddesk.desk.detail.component.net.ParamsUtils
  * @author: lll
  * @date: 2018/12/29
  */
-class DeskDetailRepository(var context: Context) : BaseRepository() {
+class DeskDetailRepository : BaseRepository() {
 
-    fun getVerticalList(id: String, pageNo: Int, hasDialog: Boolean) {
+    fun getVerticalList(context: Context?, id: String, pageNo: Int, hasDialog: Boolean) {
         var order: String
         var format = if (id.isNotEmpty()) {
             order = "hot"

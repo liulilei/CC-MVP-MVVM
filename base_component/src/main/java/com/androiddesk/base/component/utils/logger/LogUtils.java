@@ -1,20 +1,14 @@
 package com.androiddesk.base.component.utils.logger;
 
-import android.annotation.SuppressLint;
-
 import com.orhanobut.logger.Logger;
-
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 /**
  * 日志工具类
  *
- * @author chao.qu
- * @date 2017/9/29
+ * @author lll
  */
 
-public class LogHelper {
+public class LogUtils {
 
     public static final String TAG = "desk";
 
@@ -54,7 +48,7 @@ public class LogHelper {
     }
 
 
-    public synchronized static void v(String...msgs) {
+    public synchronized static void v(String... msgs) {
         StackTraceElement traceElement = ((new Exception()).getStackTrace())[1];
         StringBuilder toStringBuffer = new StringBuilder("[").append(traceElement.getFileName()).append(" | ")
                 .append(traceElement.getLineNumber()).append(" | ").append(traceElement.getMethodName()).append("] ");
@@ -68,7 +62,7 @@ public class LogHelper {
         Logger.t(TAG).i(toStringBuffer.toString());
     }
 
-    public synchronized static void d(String...msgs) {
+    public synchronized static void d(String... msgs) {
         StackTraceElement traceElement = ((new Exception()).getStackTrace())[1];
         StringBuilder toStringBuffer = new StringBuilder("[").append(traceElement.getFileName()).append(" | ")
                 .append(traceElement.getLineNumber()).append(" | ").append(traceElement.getMethodName()).append("] ");
@@ -82,7 +76,7 @@ public class LogHelper {
         Logger.t(TAG).i(toStringBuffer.toString());
     }
 
-    public synchronized static void i(String...msgs) {
+    public synchronized static void i(String... msgs) {
         StackTraceElement traceElement = ((new Exception()).getStackTrace())[1];
         StringBuilder toStringBuffer = new StringBuilder("[").append(traceElement.getFileName()).append(" | ")
                 .append(traceElement.getLineNumber()).append(" | ").append(traceElement.getMethodName()).append("] ");
@@ -96,7 +90,7 @@ public class LogHelper {
         Logger.t(TAG).i(toStringBuffer.toString());
     }
 
-    public synchronized static void w(String...msgs) {
+    public synchronized static void w(String... msgs) {
         StackTraceElement traceElement = ((new Exception()).getStackTrace())[1];
         StringBuilder toStringBuffer = new StringBuilder("[").append(traceElement.getFileName()).append(" | ")
                 .append(traceElement.getLineNumber()).append(" | ").append(traceElement.getMethodName()).append("] ");
@@ -110,7 +104,7 @@ public class LogHelper {
         Logger.t(TAG).w(toStringBuffer.toString());
     }
 
-    public synchronized static void e(String...msgs) {
+    public synchronized static void e(String... msgs) {
         StackTraceElement traceElement = ((new Exception()).getStackTrace())[1];
         StringBuilder toStringBuffer = new StringBuilder("[").append(traceElement.getFileName()).append(" | ")
                 .append(traceElement.getLineNumber()).append(" | ").append(traceElement.getMethodName()).append("] ");
@@ -122,31 +116,5 @@ public class LogHelper {
             toStringBuffer.append(String.format("===%s", msg));
         }
         Logger.t(TAG).e(toStringBuffer.toString());
-    }
-
-    // 当前文件名
-    public static String file() {
-        StackTraceElement traceElement = ((new Exception()).getStackTrace())[1];
-        return traceElement.getFileName();
-    }
-
-    // 当前方法名
-    public static String func() {
-        StackTraceElement traceElement = ((new Exception()).getStackTrace())[1];
-        return traceElement.getMethodName();
-    }
-
-    // 当前行号
-    public static int line() {
-        StackTraceElement traceElement = ((new Exception()).getStackTrace())[1];
-        return traceElement.getLineNumber();
-    }
-
-    // 当前时间
-    @SuppressLint("SimpleDateFormat")
-    public static String time() {
-        Date now = new Date();
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
-        return sdf.format(now);
     }
 }
