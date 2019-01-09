@@ -1,9 +1,10 @@
 package com.androiddesk.desk.detail.component.v
 
+import android.view.View
 import com.androiddesk.desk.detail.component.R
 import com.androiddesk.desk.detail.component.mvvm.base.BaseActivity
 import com.androiddesk.desk.detail.component.vm.DeskDetailViewMolder
-import kotlinx.android.synthetic.main.desk_detail.*
+import kotlinx.android.synthetic.main.base_title.*
 
 /**
  *@Description:
@@ -17,9 +18,14 @@ class DeskDetailActivity : BaseActivity<DeskDetailViewMolder>() {
     }
 
     override fun initViewAndData() {
-        tv.setOnClickListener {
-            //            startActivity(Intent(this, AutoSizeDemo::class.java))
-            mViewModel?.getVerticalList(mContext, "", 1, true)
+        titleTv.text = "详情"
+        leftIv.visibility = View.VISIBLE
+        onclick()
+    }
+
+    private fun onclick() {
+        leftIv.setOnClickListener {
+            finish()
         }
     }
 }

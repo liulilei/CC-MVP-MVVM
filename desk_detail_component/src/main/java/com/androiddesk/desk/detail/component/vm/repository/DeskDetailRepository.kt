@@ -18,7 +18,7 @@ import com.androiddesk.desk.detail.component.net.ParamsUtils
  */
 class DeskDetailRepository : BaseRepository() {
 
-    fun getVerticalList(context: Context?, id: String, pageNo: Int, hasDialog: Boolean) {
+    fun getVerticalList(context: Context?, id: String, pageNo: Int, hasDialog: Boolean)/*: MutableLiveData<List<VerticalInfo.Vertical>>*/ {
         var order: String
         var format = if (id.isNotEmpty()) {
             order = "hot"
