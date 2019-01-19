@@ -3,6 +3,7 @@ package com.androiddesk.desk.newest.component.v
 import android.os.Bundle
 import android.support.v7.widget.GridLayoutManager
 import android.view.ViewGroup
+import androiddesk.com.desk.base.component.processor.ComponentDetail
 import androiddesk.com.desk.base.component.utils.ViewUtils
 import com.androiddesk.base.component.constants.Constants
 import com.androiddesk.base.component.utils.StringUtils
@@ -11,6 +12,7 @@ import com.androiddesk.desk.newest.component.adapter.viewholder.NewestViewHolder
 import com.androiddesk.desk.newest.component.m.VerticalInfo
 import com.androiddesk.desk.newest.component.p.NewestPresenter
 import com.androiddesk.desk.newest.component.p.contract.NewestContract
+import com.billy.cc.core.component.CC
 import com.jude.easyrecyclerview.adapter.BaseViewHolder
 import com.jude.easyrecyclerview.adapter.RecyclerArrayAdapter
 import com.jude.easyrecyclerview.decoration.SpaceDecoration
@@ -79,6 +81,18 @@ class NewestFragment : BaseMvpFragment<NewestPresenter>(), NewestContract.View, 
         adapter?.setMore(R.layout.footer_loading_more, this)
         adapter?.setNoMore(R.layout.footer_nomore)
         adapter?.setError(R.layout.footer_error, this)
+        adapter?.setOnItemClickListener {
+            if (it >= 0) {
+                val item = adapter?.getItem(it)
+                CC.obtainBuilder(ComponentDetail.COMPONENT_NAME)
+                        .setActionName(ComponentDetail.DETAIL_ACTIVITY_ACTION)
+                        .setContext(mContext)
+//                        .addParam(ComponentDetail.NEWEST_ACTIVITY_TITLE, item?.name)
+//                        .addParam(ComponentDetail.NEWEST_ACTIVITY_ID, item?.id)
+                        .build()
+                        .call()
+            }
+        }
     }
 
     override fun onLazyInitView(savedInstanceState: Bundle?) {
