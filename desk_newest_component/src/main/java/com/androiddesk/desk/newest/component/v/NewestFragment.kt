@@ -83,7 +83,7 @@ class NewestFragment : BaseMvpFragment<NewestPresenter>(), NewestContract.View, 
         adapter?.setError(R.layout.footer_error, this)
         adapter?.setOnItemClickListener {
             if (it >= 0) {
-                val item = adapter?.getItem(it)
+//                val item = adapter?.getItem(it)
                 CC.obtainBuilder(ComponentDetail.COMPONENT_NAME)
                         .setActionName(ComponentDetail.DETAIL_ACTIVITY_ACTION)
                         .setContext(mContext)
