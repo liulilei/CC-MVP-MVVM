@@ -6,7 +6,7 @@
 
     <include layout="@layout/base_title" />
 
-    <com.jude.easyrecyclerview.swipe.SwipeRefreshLayout
+    <com.androiddesk.base.component.widget.swiperecycler.SwipeRefreshRecyclerView
         android:id="@+id/recycleView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />

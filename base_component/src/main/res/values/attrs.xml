@@ -45,4 +45,8 @@
             <enum name="none" value="2" />
         </attr>
     </declare-styleable>
+
+    <declare-styleable name="RatioImageView">
+        <attr name="width_height_radio" format="reference|float" />
+    </declare-styleable>
 </resources>
