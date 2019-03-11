@@ -10,4 +10,6 @@ object ComponentDetail {
     const val COMPONENT_NAME = "componentDetail"
 
     const val DETAIL_ACTIVITY_ACTION = "detailActivityAction"
+
+    const val DETAIL_ACTIVITY_VERTICAL_DATA = "detailActivityVerticalData"
 }

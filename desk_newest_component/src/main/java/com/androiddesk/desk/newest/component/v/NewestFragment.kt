@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import androiddesk.com.desk.base.component.processor.ComponentDetail
 import androiddesk.com.desk.base.component.utils.ViewUtils
 import com.androiddesk.base.component.constants.Constants
+import com.androiddesk.base.component.utils.ParseDataUtils
 import com.androiddesk.base.component.utils.StringUtils
 import com.androiddesk.desk.newest.component.R
 import com.androiddesk.desk.newest.component.adapter.viewholder.NewestViewHolder
@@ -83,12 +84,10 @@ class NewestFragment : BaseMvpFragment<NewestPresenter>(), NewestContract.View, 
         adapter?.setError(R.layout.footer_error, this)
         adapter?.setOnItemClickListener {
             if (it >= 0) {
-//                val item = adapter?.getItem(it)
                 CC.obtainBuilder(ComponentDetail.COMPONENT_NAME)
                         .setActionName(ComponentDetail.DETAIL_ACTIVITY_ACTION)
                         .setContext(mContext)
-//                        .addParam(ComponentDetail.NEWEST_ACTIVITY_TITLE, item?.name)
-//                        .addParam(ComponentDetail.NEWEST_ACTIVITY_ID, item?.id)
+                        .addParam(ComponentDetail.DETAIL_ACTIVITY_VERTICAL_DATA, ParseDataUtils.toJson(adapter?.getItem(it)))
                         .build()
                         .call()
             }
