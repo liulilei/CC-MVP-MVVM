@@ -35,6 +35,7 @@ public class GlideCircleTransform extends BitmapTransformation {
         mBorderPaint.setColor(borderColor);
         mBorderPaint.setStyle(Paint.Style.STROKE);
         mBorderPaint.setStrokeWidth(mBorderWidth);
+//        Logger.d("---------------glideCircleTransform ----mBorderWidth-"+mBorderWidth);
         Logger.d("---------------glideCircleTransform ----mBorderWidth-"+mBorderWidth);
     }
 
